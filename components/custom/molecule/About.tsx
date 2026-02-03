@@ -3,7 +3,7 @@ import TextEntry from "../atom/TextEntry";
 export default function About() {
   return (
     <div className="h-auto w-full px-3 md:px-2">
-      <p className="text-primary font-semibold text-lg">
+      <p className="text-primary font-semibold text-md">
         {" "}
         <span className="underline underline-offset-3">
           Praveen <span className="text-primary/50">Thanikachalam</span>
@@ -11,10 +11,10 @@ export default function About() {
         <span className="text-yellow-400">✿</span> 21 yr old, From India
       </p>
       <ul
-        className="text-primary/80 flex gap-y-0.5 md:gap-0.5 flex-col text-md
+        className="text-primary/80 flex md:gap-0.5 gap-0 flex-col text-md
           font-medium"
       >
-        <li className="flex gap-1 md:flex-row flex-col">
+        <li className="flex gap-0 lg:gap-1 md:flex-row flex-col">
           {" "}
           <TextEntry delay={0.5}>
             {" "}

@@ -3,6 +3,7 @@
 import About from "@/components/custom/molecule/About";
 import Connect from "@/components/custom/molecule/Connect";
 import Header from "@/components/custom/molecule/Header";
+import Projects from "@/components/custom/molecule/Projects";
 import SpotifyNotifer from "@/components/custom/molecule/SpotifyNotifier";
 import { Separator } from "@/components/ui/separator";
 
@@ -21,7 +22,7 @@ export default function Home() {
         <Separator className="bg-primary/5" />
         <About />
         <Separator className="bg-primary/5" />
-        <Connect />
+        <Projects />
         <Separator className="bg-primary/5" />
       </div>
       <SpotifyNotifer />;
