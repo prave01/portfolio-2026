@@ -22,6 +22,7 @@ export default function Home() {
             <TextEntry text={"Praveen"} />
             <TextEntry
               text={"Thanikachalam"}
+              delay={0.2}
               className="text-2xl text-primary/80 ml-10"
             />
           </div>

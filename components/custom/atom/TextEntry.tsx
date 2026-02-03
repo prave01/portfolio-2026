@@ -6,9 +6,11 @@ import { useEffect, useState } from "react";
 export default function TextEntry({
   text,
   className,
+  delay = 0,
 }: {
   text: string;
   className?: ClassValue;
+  delay?: number;
 }) {
   const [scope, animate] = useAnimate();
   const [appear, setAppear] = useState(false);
@@ -21,7 +23,7 @@ export default function TextEntry({
     await animate(
       "div.absolute",
       { width: "100%" },
-      { duration: 0.3, ease: "easeInOut" },
+      { duration: 0.3, ease: "easeInOut", delay: delay },
     );
     setAppear(true);
 
