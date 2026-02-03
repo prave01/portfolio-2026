@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Playwrite_US_Trad } from "next/font/google";
+import {
+  Crimson_Pro,
+  Geist,
+  Newsreader,
+  Playwrite_US_Trad,
+  Tangerine,
+} from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -7,10 +13,11 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-const playwrite = Playwrite_US_Trad({
+const playwrite = Newsreader({
   weight: ["400"],
   display: "swap",
-  variable: "--font-playwrite",
+  variable: "--font-newsreader",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
