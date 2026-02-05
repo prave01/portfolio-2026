@@ -23,10 +23,10 @@ export default function ProjectsPageClient() {
             transition-all ease-in-out group duration-150"
         >
           <ChevronLeft
-            className="size-5 group-hover:-translate-x-1 transition-all
+            className="size-4 group-hover:-translate-x-1 transition-all
               duration-150 ease-in-out"
           />{" "}
-          Back
+          <p className="text-sm">Back</p>
         </Link>
         <div
           className="grid grid-cols-1 gap-y-12 items-start pb-15 pt-5 md:py-10

@@ -7,7 +7,6 @@ import GithubHeatMap from "@/components/custom/molecule/GithubHeatMap";
 import Header from "@/components/custom/molecule/Header";
 import OSSContributions from "@/components/custom/molecule/OSSContributions";
 import Projects from "@/components/custom/molecule/Projects";
-import SpotifyNotifer from "@/components/custom/molecule/SpotifyNotifier";
 import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
@@ -17,7 +16,6 @@ export default function Home() {
         className="gap-2 md:gap-4 pt-3 md:pt-18 mx-auto flex flex-col max-w-3xl
           w-full"
       >
-        {" "}
         <Header />
         <Separator className="bg-primary/5" />
         <About />
@@ -32,7 +30,6 @@ export default function Home() {
         <Separator className="bg-primary/5" />
         <Footer />
       </div>
-      <SpotifyNotifer />;
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import TextEntry from "../atom/TextEntry";
+import SpotifyNotifer from "./SpotifyNotifier";
 
 export default function About() {
   return (
@@ -63,6 +64,7 @@ export default function About() {
           </TextEntry>
         </li>
       </ul>
+      <SpotifyNotifer />
     </div>
   );
 }
