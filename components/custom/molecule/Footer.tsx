@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRef } from "react";
 import Image from "next/image";
 import TextEntry from "../atom/TextEntry";
-import { Mail, Mailbox } from "lucide-react";
+import { Mail } from "lucide-react";
 
 export default function Footer() {
   const ref = useRef(null);
@@ -44,7 +44,8 @@ export default function Footer() {
         src={"/am.png"}
         width={500}
         height={500}
-        className="size-50 bg-none md:bg-yellow-400"
+        className="size-50 bg-none md:bg-yellow-400/50 [corner-shape:squircle]
+          rounded-4xl"
         alt={""}
       />
     </div>
