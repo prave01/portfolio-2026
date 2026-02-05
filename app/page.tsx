@@ -1,6 +1,7 @@
 "use client";
 
 import About from "@/components/custom/molecule/About";
+import Experience from "@/components/custom/molecule/Experience";
 import GithubHeatMap from "@/components/custom/molecule/GithubHeatMap";
 import Header from "@/components/custom/molecule/Header";
 import Projects from "@/components/custom/molecule/Projects";
@@ -22,6 +23,8 @@ export default function Home() {
         <GithubHeatMap />
         <Separator className="bg-primary/5" />
         <Projects />
+        <Separator className="bg-primary/5" />
+        <Experience />
         <Separator className="bg-primary/5" />
       </div>
       <SpotifyNotifer />;

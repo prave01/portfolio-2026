@@ -17,8 +17,6 @@ export default function Projects() {
           ease: easeInOut,
         },
       );
-
-      return () => animate(element, { opacity: 0, x: -100 });
     });
 
     animate(
@@ -51,9 +49,9 @@ export default function Projects() {
         </Link>
       </div>{" "}
       <div
-        className="px-4 py-5 grid grid-cols-2 md:grid-cols-3 gap-6 items-center
-          justify-center w-fit mx-auto mask-b-from-5% mask-b-to-transparent
-          brightness-50"
+        className="px-4 pt-4 lg:pt-8 grid grid-cols-2 md:grid-cols-3 gap-6
+          items-center justify-center w-fit mx-auto mask-b-from-5%
+          mask-b-to-transparent brightness-50"
       >
         {Array.from({ length: 6 }).map((_, i) => (
           <Image
@@ -63,7 +61,7 @@ export default function Projects() {
             alt={""}
             width={500}
             height={500}
-            className="w-55 sample-image h-30 object-cover rounded-xl"
+            className="w-55 sample-image md:h-30 h-25 object-cover rounded-xl"
           />
         ))}
       </div>

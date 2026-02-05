@@ -5,6 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import { ActivityCalendar } from "react-activity-calendar";
 import { easeInOut, motion } from "motion/react";
 import { animate, inView } from "motion";
+import { SlidingNumber } from "@/components/ui/sliding-number";
 
 type Contribution = {
   date: string;
@@ -55,8 +56,6 @@ export default function GithubHeatMap() {
           ease: easeInOut,
         },
       );
-
-      return () => animate(element, { opacity: 0, x: -100 });
     });
   }, []);
   return (
@@ -68,13 +67,20 @@ export default function GithubHeatMap() {
         GitHub
       </motion.p>
 
-      <p className="text-xs md:text-sm text-primary/80 font-normal px-3.5 py-1">
-        {contriData?.contributions?.length || 0} Contributions Last Year
-      </p>
+      <div
+        className="text-xs title-github md:text-sm text-primary/80 font-normal
+          px-3.5 pt-1 flex gap-1"
+      >
+        <SlidingNumber
+          value={contriData?.contributions?.length || 0}
+          padStart={true}
+        />
+        Contributions Last Year
+      </div>
 
       <div
-        className="mx-auto lg:pt-10 pt-5 lg:px-0 px-4 w-auto lg:w-fit h-60
-          lg:h-60 flex items-center justify-center"
+        className="mx-auto pt-6 lg:px-0 px-4 w-auto lg:w-fit h-50 lg:h-60 flex
+          items-center justify-center"
       >
         {loading ? (
           <div
