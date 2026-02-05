@@ -23,7 +23,7 @@ export default function SpotifyNotifer() {
         damping: 20,
       }}
       className="bg-green-400 [clip-path:circle(20%_at_right_bottom)] circle
-        size-50 absolute bottom-0 right-0"
+        size-50 absolute z-10 bottom-0 right-0"
     >
       <Image
         width={500}

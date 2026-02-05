@@ -64,7 +64,7 @@ export default function Header() {
         </p>
       </div>
       <div
-        className="size-21 border-yellow-400/30 border-none lg:border-dashed
+        className="size-21 border-yellow-400/30 border-none md:border-dashed
           relative border-2 [corner-shape:squircle] rounded-[40px]"
       >
         {" "}
