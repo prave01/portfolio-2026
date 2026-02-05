@@ -1,6 +1,6 @@
 import { animate, inView, easeInOut } from "motion";
 import { useEffect } from "react";
-import { motion } from "motion/react";
+import { motion, stagger } from "motion/react";
 import { Accordion } from "@/components/ui/accordion";
 import ExperienceAccordian from "../atom/ExperienceAccordian";
 
@@ -11,12 +11,25 @@ export default function Experience() {
         element,
         { opacity: [0, 1], y: [5, 0] },
         {
+          duration: 0.4,
+          ease: easeInOut,
+        },
+      );
+    });
+
+    inView(".title-exp", () => {
+      animate(
+        ".item-acc",
+        { opacity: [0, 1], y: [5, 0], filter: ["blur(5px)", "blur(0px)"] },
+        {
+          delay: stagger(0.4),
           duration: 0.9,
           ease: easeInOut,
         },
       );
     });
   }, []);
+
   return (
     <div className="py-3">
       <motion.p
@@ -26,7 +39,7 @@ export default function Experience() {
         Experience
       </motion.p>
 
-      <div className="pt-4 lg:pt-8 px-0 md:px-4 flex flex-col gap-5">
+      <div className="pt-4 lg:pt-8 px-3 md:px-6 flex flex-col gap-5">
         <Accordion
           type="multiple"
           defaultValue={["item-1"]}

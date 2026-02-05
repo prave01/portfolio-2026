@@ -4,6 +4,7 @@ import About from "@/components/custom/molecule/About";
 import Experience from "@/components/custom/molecule/Experience";
 import GithubHeatMap from "@/components/custom/molecule/GithubHeatMap";
 import Header from "@/components/custom/molecule/Header";
+import OSSContributions from "@/components/custom/molecule/OSSContributions";
 import Projects from "@/components/custom/molecule/Projects";
 import SpotifyNotifer from "@/components/custom/molecule/SpotifyNotifier";
 import { Separator } from "@/components/ui/separator";
@@ -25,6 +26,8 @@ export default function Home() {
         <Projects />
         <Separator className="bg-primary/5" />
         <Experience />
+        <Separator className="bg-primary/5" />
+        <OSSContributions />
         <Separator className="bg-primary/5" />
       </div>
       <SpotifyNotifer />;

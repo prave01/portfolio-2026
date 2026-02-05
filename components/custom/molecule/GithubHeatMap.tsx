@@ -52,7 +52,7 @@ export default function GithubHeatMap() {
         element,
         { opacity: [0, 1], y: [5, 0] },
         {
-          duration: 0.9,
+          duration: 0.4,
           ease: easeInOut,
         },
       );

@@ -20,8 +20,10 @@ export default function ExperienceAccordian({
   description: string[];
   bgcolor: string;
 }) {
+  const val = `item-acc-${index.toString()}`;
+
   return (
-    <AccordionItem value={`item-${index.toString()}`}>
+    <AccordionItem className="item-acc" value={val}>
       <AccordionTrigger className="">
         <div className="flex gap-3">
           {" "}

@@ -13,21 +13,23 @@ export default function Projects() {
         element,
         { opacity: [0, 1], y: [5, 0] },
         {
-          duration: 0.9,
+          duration: 0.4,
           ease: easeInOut,
         },
       );
     });
 
-    animate(
-      ".sample-image",
-      { opacity: [0, 1], y: [5, 0], filter: ["blur(5px)", "blur(0px)"] },
-      {
-        delay: stagger(0.1),
-        duration: 0.9,
-        ease: easeInOut,
-      },
-    );
+    inView(".title-projects", () => {
+      animate(
+        ".sample-image",
+        { opacity: [0, 1], y: [5, 0], filter: ["blur(5px)", "blur(0px)"] },
+        {
+          delay: stagger(0.1),
+          duration: 0.9,
+          ease: easeInOut,
+        },
+      );
+    });
   }, []);
   return (
     <div className="relative w-full py-3">
