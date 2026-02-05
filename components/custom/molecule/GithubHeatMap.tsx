@@ -52,11 +52,11 @@ export default function GithubHeatMap() {
       >
         GitHub
       </p>
-      {!loading && (
-        <p className="text-xs md:text-sm text-primary/80 font-normal px-3.5 py-1">
-          {contriData?.contributions?.length} Contributions Last Year
-        </p>
-      )}
+
+      <p className="text-xs md:text-sm text-primary/80 font-normal px-3.5 py-1">
+        {contriData?.contributions?.length || 0} Contributions Last Year
+      </p>
+
       <div
         className="mx-auto lg:pt-10 pt-5 lg:px-0 px-4 w-auto lg:w-fit h-auto
           lg:h-60 flex items-center justify-center"
