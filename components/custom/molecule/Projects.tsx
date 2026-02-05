@@ -13,7 +13,7 @@ export default function Projects() {
   return (
     <div className="relative w-full py-3">
       <p
-        className="font-news text-2xl lg:text-3xl font-medium text-primary
+        className="font-news text-2xl md:text-3xl font-medium text-primary
         px-3"
       >
         Projects
@@ -37,8 +37,8 @@ export default function Projects() {
         {Array.from({ length: 4 }).map((_, idx) => (
           <div key={idx} className="relative mx-auto group w-fit h-auto z-0">
             <motion.div
-              className="md:h-50 h-40 group-hover:-translate-y-5 transition-all
-                duration-150 ease-in-out w-84 md:w-85 border-primary/80
+              className="h-40 group-hover:-translate-y-5 transition-all
+                duration-150 ease-in-out w-80 md:w-70 border-primary/80
                 [corner-shape:squircle] rounded-[40px] overflow-clip relative
                 z-10 group-hover:shadow-[0px_1px_8px_var(--color-black)]"
             >
@@ -76,8 +76,8 @@ export default function Projects() {
                     {" "}
                     <GithubIcon
                       className="text-neutral-900 hover:text-gray-200
-                        rounded-full transition-all duration-150 size-5
-                        ease-in-out"
+                        rounded-full transition-all duration-150 size-4
+                        md:size-5 ease-in-out"
                     />
                   </TooltipTrigger>
                   <TooltipContent
@@ -91,8 +91,8 @@ export default function Projects() {
                   <TooltipTrigger>
                     <Globe
                       className="text-neutral-900 hover:text-blue-700
-                        rounded-full transition-all duration-150 size-5
-                        ease-in-out"
+                        rounded-full transition-all duration-150 size-4
+                        md:size-5 ease-in-out"
                     />
                   </TooltipTrigger>
                   <TooltipContent
@@ -106,8 +106,8 @@ export default function Projects() {
                   <TooltipTrigger>
                     <Play
                       className="text-neutral-900 hover:text-red-700
-                        rounded-full transition-all duration-150 size-5
-                        ease-in-out"
+                        rounded-full transition-all duration-150 size-4
+                        md:size-5 ease-in-out"
                     />
                   </TooltipTrigger>
                   <TooltipContent

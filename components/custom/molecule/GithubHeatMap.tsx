@@ -58,7 +58,7 @@ export default function GithubHeatMap() {
       </p>
 
       <div
-        className="mx-auto lg:pt-10 pt-5 lg:px-0 px-4 w-auto lg:w-fit h-auto
+        className="mx-auto lg:pt-10 pt-5 lg:px-0 px-4 w-auto lg:w-fit h-60
           lg:h-60 flex items-center justify-center"
       >
         {loading ? (
