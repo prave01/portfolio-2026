@@ -20,7 +20,7 @@ export default function ProjectCard({
   live: string;
 }) {
   return (
-    <div className="relative mx-auto group w-fit h-auto z-0">
+    <div className="relative project-card mx-auto group w-fit h-auto z-0">
       <motion.div
         className="h-40 group-hover:-translate-y-5 transition-all duration-150
           ease-in-out w-80 md:w-70 border-primary/80 [corner-shape:squircle]
@@ -61,7 +61,7 @@ export default function ProjectCard({
           <Tooltip delayDuration={800}>
             <TooltipTrigger>
               {" "}
-              <Link href={github}>
+              <Link target="_blank" href={github}>
                 {" "}
                 <GithubIcon
                   className="text-neutral-900 hover:text-gray-200 rounded-full
@@ -78,7 +78,7 @@ export default function ProjectCard({
           </Tooltip>
           <Tooltip delayDuration={800}>
             <TooltipTrigger>
-              <Link href={live}>
+              <Link target="_blank" href={live}>
                 {" "}
                 <Globe
                   className="text-neutral-900 hover:text-blue-700 rounded-full

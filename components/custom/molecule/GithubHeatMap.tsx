@@ -3,7 +3,8 @@
 import { Spinner } from "@/components/ui/spinner";
 import { useEffect, useMemo, useState } from "react";
 import { ActivityCalendar } from "react-activity-calendar";
-import { motion } from "motion/react";
+import { easeInOut, motion } from "motion/react";
+import { animate, inView } from "motion";
 
 type Contribution = {
   date: string;
@@ -44,14 +45,28 @@ export default function GithubHeatMap() {
     });
   }, [contriData]);
 
+  useEffect(() => {
+    inView(".title-github", (element) => {
+      animate(
+        element,
+        { opacity: [0, 1], y: [5, 0] },
+        {
+          duration: 0.9,
+          ease: easeInOut,
+        },
+      );
+
+      return () => animate(element, { opacity: 0, x: -100 });
+    });
+  }, []);
   return (
     <div className="w-full py-3">
-      <p
-        className="font-news text-2xl md:text-3xl font-medium text-primary
-        px-3"
+      <motion.p
+        className="font-news title-github text-2xl md:text-3xl font-medium
+          text-primary px-3"
       >
         GitHub
-      </p>
+      </motion.p>
 
       <p className="text-xs md:text-sm text-primary/80 font-normal px-3.5 py-1">
         {contriData?.contributions?.length || 0} Contributions Last Year
