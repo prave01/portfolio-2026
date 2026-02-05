@@ -20,9 +20,13 @@ export default function ProjectsPageClient() {
         <Link
           href={"/"}
           className="text-primary/80 flex items-center hover:text-primary
-            transition-all ease-in-out duration-150"
+            transition-all ease-in-out group duration-150"
         >
-          <ChevronLeft className="size-5" /> Back
+          <ChevronLeft
+            className="size-5 group-hover:-translate-x-1 transition-all
+              duration-150 ease-in-out"
+          />{" "}
+          Back
         </Link>
         <div
           className="grid grid-cols-1 gap-y-12 items-start pb-15 pt-5 md:py-10

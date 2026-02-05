@@ -38,8 +38,8 @@ export default function OSSContributions() {
       </motion.p>
 
       <div
-        className="md:px-6 px-1 pt-4 md:pt-6 w-full flex-wrap flex-row flex
-          gap-2 items- justify-start"
+        className="md:px-6 px-3 pt-4 md:pt-6 w-full flex-wrap flex-row flex
+          gap-2 justify-start"
       >
         <OSSPill
           name={"Formbricks"}

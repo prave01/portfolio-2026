@@ -4,6 +4,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
+import TextEntry from "./TextEntry";
 
 export default function ExperienceAccordian({
   name,
@@ -51,9 +52,13 @@ export default function ExperienceAccordian({
             justify-start pl-15.5 py-4"
         >
           {description.map((i, idx) => (
-            <p className="text-primary/90 font-medium text-[14px]" key={idx}>
+            <TextEntry
+              delay={idx - 0.5}
+              className="text-primary/90 font-medium text-[14px]"
+              key={idx}
+            >
               {i}
-            </p>
+            </TextEntry>
           ))}
         </div>
       </AccordionContent>
