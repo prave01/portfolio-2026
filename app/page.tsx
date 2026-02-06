@@ -1,8 +1,7 @@
-"use client";
-
 import About from "@/components/custom/molecule/About";
 import Experience from "@/components/custom/molecule/Experience";
 import Footer from "@/components/custom/molecule/Footer";
+import Footer2 from "@/components/custom/molecule/Footer2";
 import GithubHeatMap from "@/components/custom/molecule/GithubHeatMap";
 import Header from "@/components/custom/molecule/Header";
 import OSSContributions from "@/components/custom/molecule/OSSContributions";
@@ -28,7 +27,8 @@ export default function Home() {
         <Separator className="bg-primary/5" />
         <OSSContributions />
         <Separator className="bg-primary/5" />
-        <Footer />
+        {/* <Footer /> */}
+        <Footer2 />
       </div>
     </div>
   );

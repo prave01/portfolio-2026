@@ -1,3 +1,5 @@
+"use client";
+
 import { animate, inView, easeInOut } from "motion";
 import { useEffect } from "react";
 import { motion, stagger } from "motion/react";

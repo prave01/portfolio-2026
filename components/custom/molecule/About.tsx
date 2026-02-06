@@ -1,7 +1,14 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import TextEntry from "../atom/TextEntry";
 import SpotifyNotifer from "./SpotifyNotifier";
 
 export default function About() {
+  const [isMounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   return (
     <div className="h-auto w-full px-3 md:px-2">
       <p className="text-primary font-semibold text-md">
@@ -64,7 +71,7 @@ export default function About() {
           </TextEntry>
         </li>
       </ul>
-      <SpotifyNotifer />
+      {isMounted && <SpotifyNotifer />}
     </div>
   );
 }

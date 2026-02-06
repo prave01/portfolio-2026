@@ -6,8 +6,9 @@ import Image from "next/image";
 import z from "zod";
 import { cn } from "@/lib/utils";
 import { TimeSlider } from "../atom/TimeSlider";
-import { PauseIcon } from "lucide-react";
+import { PauseIcon, X } from "lucide-react";
 import { Spinner } from "@/components/ui/spinner";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 const DataSchema = z.object({
   is_playing: z.boolean(),
@@ -55,19 +56,39 @@ export default function SpotifyNotifer() {
     setLoading(true);
     const es = new EventSource("/spotify");
 
-    es.onmessage = (e) => {
+    es.onmessage = async (e) => {
       setLoading(false);
-      console.log(JSON.parse(e.data));
-      setData(JSON.parse(e.data));
+      const data = await JSON.parse(e.data);
+      setData(data);
     };
+
     setLoading(false);
     es.onerror = () => es.close();
 
-    return es.close;
+    return () => {
+      es.close();
+    };
   }, []);
 
+  useEffect(() => {
+    if (data && data.is_playing) {
+      setExpanded(true);
+    }
+  }, [data?.is_playing]);
+
   return (
-    <div className="w-full py-2 md:pt-4 md:py-0">
+    <motion.div
+      animate={{
+        opacity: [0, 1],
+        filter: ["blur(5px)", "blur(0px)"],
+      }}
+      transition={{
+        duration: 0.3,
+        ease: easeInOut,
+        damping: 20,
+      }}
+      className="w-full py-2 md:pt-4 md:py-0"
+    >
       <motion.div
         onClick={() => setExpanded(!isExpanded)}
         layout
@@ -93,11 +114,24 @@ export default function SpotifyNotifer() {
       >
         <div className="flex gap-2 w-full h-full flex-col">
           {" "}
-          <div className="text-md ml-0.5 font-medium w-fit flex gap-2">
+          <div
+            className="text-md ml-0.5 bg-green-500 z-30 relative font-medium
+              w-full flex gap-2"
+          >
             {" "}
             Spotify
             {loading ? (
               <Spinner className="size-5 mr-0.5" />
+            ) : data?.is_playing ? (
+              <DotLottieReact
+                width={500}
+                height={100}
+                className="size-10 z-40 absolute -translate-y-2.5
+                  translate-x-12"
+                loop
+                autoplay
+                src="/wave.lottie"
+              />
             ) : (
               <Image
                 src={"/spotify.png"}
@@ -181,15 +215,17 @@ export default function SpotifyNotifer() {
             <motion.div
               animate={{
                 filter: ["blur(5px)", "blur(0px)"],
+                opacity: [0, 1],
                 scale: [0, 1],
               }}
               exit={{
                 filter: ["blur(0px)", "blur(5px)"],
+                opacity: [1, 0],
                 scale: [1, 0],
               }}
               transition={{
                 duration: 0.3,
-                delay: 0.2,
+                delay: 0.1,
                 ease: easeInOut,
                 damping: 20,
               }}
@@ -199,10 +235,15 @@ export default function SpotifyNotifer() {
               className="w-50 h-full relative rounded-[10px] flex items-center
                 justify-center"
             >
-              {" "}
+              <div
+                onClick={() => setExpanded(false)}
+                className="top-2 rounded-full cursor-pointer right-2 absolute
+                  bg-green-500 w-fit p-1 border border-primary/80"
+              >
+                <X className="size-2" />
+              </div>{" "}
               {data && data?.item?.album?.images[0].url ? (
                 <>
-                  {" "}
                   <Image
                     className="h-full w-full object-cover rounded-[10px]"
                     src={data.item.album.images[0].url}
@@ -252,6 +293,6 @@ export default function SpotifyNotifer() {
           )}
         </AnimatePresence>
       </motion.div>
-    </div>
+    </motion.div>
   );
 }

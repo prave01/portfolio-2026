@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { type ClassValue } from "clsx";
 import { useAnimate } from "motion/react";
