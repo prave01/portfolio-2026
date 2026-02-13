@@ -34,7 +34,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.className} ${playwrite.variable} antialiased
-          bg-[#131010] `}
+          bg-[#131010] no-scrollbar`}
       >
         {children}
       </body>

@@ -5,6 +5,7 @@ import Link from "next/link";
 import ProjectCard from "../atom/ProjectCard";
 import { animate, easeInOut, stagger } from "motion";
 import { useEffect } from "react";
+import { LinkTransition } from "../atom/LinkTransition";
 
 export default function ProjectsPageClient() {
   useEffect(() => {
@@ -17,7 +18,7 @@ export default function ProjectsPageClient() {
   return (
     <div className="w-full min-h-screen pt-10 md:pt-20 px-3">
       <div className="max-w-2xl w-full mx-auto h-full">
-        <Link
+        <LinkTransition
           href={"/"}
           className="text-primary/80 flex items-center hover:text-primary
             transition-all ease-in-out group duration-150"
@@ -25,9 +26,9 @@ export default function ProjectsPageClient() {
           <ChevronLeft
             className="size-4 group-hover:-translate-x-1 transition-all
               duration-150 ease-in-out"
-          />{" "}
+          />
           <p className="text-sm">Back</p>
-        </Link>
+        </LinkTransition>
         <div
           className="grid grid-cols-1 gap-y-12 items-start pb-15 pt-5 md:py-10
             justify-center md:grid-cols-2 w-full h-f overflow-hidden"

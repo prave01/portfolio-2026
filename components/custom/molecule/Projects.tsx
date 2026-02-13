@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 import { stagger } from "motion/react";
+import { motion } from "motion/react";
+import { LinkTransition } from "../atom/LinkTransition";
 
 export default function Projects() {
   useEffect(() => {
@@ -32,23 +34,23 @@ export default function Projects() {
     });
   }, []);
   return (
-    <div className="relative w-full py-3">
+    <motion.div className="relative w-full py-3 title-projects opacity-0">
       <p
-        className="font-news title-projects text-2xl md:text-3xl font-medium
-          text-primary px-3"
+        className="font-news text-2xl md:text-3xl font-medium text-primary
+        px-3"
       >
         Projects
       </p>
       <div className="absolute z-10 w-full h-full">
         {" "}
-        <Link
+        <LinkTransition
           href={"/projects"}
           className="absolute bottom-16 left-1/2 -translate-x-1/2 z-10
             rounded-full bg-yellow-400 text-black shadow-lg hover:shadow-xl
             transition-all px-3 py-2 text-sm font-medium hover:bg-primary"
         >
           View More
-        </Link>
+        </LinkTransition>
       </div>{" "}
       <div
         className="px-4 pt-4 lg:pt-8 grid grid-cols-2 md:grid-cols-3 gap-6
@@ -67,6 +69,6 @@ export default function Projects() {
           />
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -21,20 +21,20 @@ export default function OSSPill({
     >
       {" "}
       <div
-        className="[corner-shape:squircle] rounded-[40px] size-12 flex
+        className="[corner-shape:squircle] rounded-[40px] size-10 flex
           bg-[#131010] items-center justify-center"
       >
         <Image
           src={icon}
           width={500}
           height={500}
-          className="size-8"
+          className="size-6"
           alt={""}
         />
       </div>
       <div className="flex pr-1 flex-col gap-0.5">
-        <p className="text-primary text-[14px]">{name}</p>
-        <p className="text-yellow-400 text-[12px]">Issue - {issue}</p>
+        <p className="text-primary text-[12px]">{name}</p>
+        <p className="text-yellow-400 text-[10px]">Issue - {issue}</p>
       </div>
     </Link>
   );

@@ -1,67 +1,98 @@
 "use client";
 
-import { useInView } from "motion/react";
 import Link from "next/link";
-import { useRef } from "react";
 import Image from "next/image";
-import TextEntry from "../atom/TextEntry";
-import { Mail } from "lucide-react";
+import { useEffect, useRef } from "react";
+import { easeInOut, useInView } from "motion/react";
+import { animate } from "motion";
 
 export default function Footer() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.5 });
 
+  useEffect(() => {
+    if (isInView) {
+      animate(
+        ".footer",
+        { filter: ["blur(5px)", "blur(0px)"], opacity: [0, 1] },
+        {
+          duration: 0.4,
+          ease: easeInOut,
+          damping: 20,
+        },
+      );
+    }
+  }, [isInView]);
+
   return (
     <div
       ref={ref}
-      className="h-50 w-full py-3 flex items-center justify-between"
+      className="h-auto footer opacity-0 w-full pb-6 md:pb-4 px-2 flex relative"
     >
-      <div className="h-full flex items-start px-6 flex-col justify-between">
+      <div
+        className="w-full h-auto bg-neutral-800 rounded-4xl
+          [corner-shape:squircle] px-4 py-4"
+      >
         {" "}
-        <div className="w-auto h-auto text-sm flex flex-col gap-4 text-primary">
-          <Link
-            href={""}
-            className="px-3 py-2 shadow-[2px_3px_2px_var(--color-primary)_inset]
-              bg-yellow-400 text-black font-normal flex gap-2 w-fit items-center
-              justify-center"
-          >
-            <XCom className="text-black" />
-            (@drunkidev)
-          </Link>
-          <Link
-            href={""}
-            className="px-3 py-2 shadow-[2px_3px_2px_var(--color-primary)_inset]
-              bg-yellow-400 text-black font-normal flex gap-2 w-fit items-center
-              justify-center"
-          >
-            <Mail className="text-red-500 size-5" />
-            Gmail
-          </Link>
+        <p className="text-xl text-yellow-400">Let's Connect</p>
+        <div className="text-md text-neutral-300 px-4 pt-4 flex flex-col gap-1">
+          <span className="font-normal">Find me active on</span>
+          <div className="flex gap-2 pl-10 pt-1 items-end">
+            {" "}
+            <Link
+              href={""}
+              className="bg-yellow-400 text-black flex items-center
+                justify-center gap-1 w-fit text-sm px-2 py-1 rounded-4xl
+                [corner-shape:squircle]
+                shadow-[0px_2px_2px_var(--color-white)_inset]
+                hover:-translate-y-0.5 transition-all duration-200 ease-in-out"
+            >
+              <Image
+                src={"/x.svg"}
+                width={500}
+                height={500}
+                className="size-5.5"
+                alt={""}
+              />
+              @drunkidev
+            </Link>
+            <Link
+              href={""}
+              className="bg-yellow-400 text-black flex items-center
+                justify-center gap-1 w-fit text-sm px-2 py-1 rounded-4xl
+                [corner-shape:squircle]
+                shadow-[0px_2px_2px_var(--color-white)_inset]
+                hover:-translate-y-0.5 transition-all duration-200 ease-in-out"
+            >
+              <Image
+                src={"/linkedin.svg"}
+                width={500}
+                height={500}
+                className="size-6"
+                alt={""}
+              />
+              @linkedin
+            </Link>
+          </div>
+          <p className="text-neutral-300 font-normal text-sm pt-4">
+            or you can email me on -{" "}
+            <Link
+              href={"mailto:praveenthanikachalam408@gmail.com"}
+              className="text-yellow-400 font-medium underline
+                underline-offset-2 italic hover:text-yellow-200"
+            >
+              praveenthanikachalam408@gmail.com
+            </Link>
+          </p>
         </div>
-        {isInView && (
-          <TextEntry className="text-primary/50 font-news">@ 2025</TextEntry>
-        )}
       </div>
       <Image
         src={"/am.png"}
         width={500}
         height={500}
-        className="size-50 bg-none md:bg-yellow-400/50 [corner-shape:squircle]
-          rounded-4xl"
+        className="size-40 absolute top-3 right-4 lg:flex hidden"
         alt={""}
       />
     </div>
   );
 }
-
-const XCom = (props: any) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={16}
-    height={16}
-    className="bi bi-twitter-x"
-    {...props}
-  >
-    <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
-  </svg>
-);

@@ -72,7 +72,7 @@ export default function SpotifyNotifer() {
 
   useEffect(() => {
     if (data && data.is_playing) {
-      setExpanded(true);
+      setTimeout(() => setExpanded(true), 1500);
     }
   }, [data?.is_playing]);
 

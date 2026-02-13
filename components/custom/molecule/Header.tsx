@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import TextEntry from "../atom/TextEntry";
-import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 
@@ -64,21 +63,18 @@ export default function Header() {
         </p>
       </div>
       <div
-        className="size-21 border-yellow-400/30 border-none md:border-dashed
-          relative border-2 [corner-shape:squircle] rounded-[40px]"
+        className="relative size-21 md:border-dashed border-2
+          border-yellow-400/30 rounded-4xl"
       >
-        {" "}
         <Image
-          width={500}
-          height={500}
-          className={cn(`object-cover object-top bg-yellow-400
-            [corner-shape:squircle] rounded-[40px] rotate-0 md:rotate-20
-            absolute size-20 transition-all duration-200 ease-in-out
-            hover:rotate-0`)}
-          src={"/new3.png"}
-          placeholder="blur"
-          alt={"Praveen's Profile Image"}
-          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+          src="/new3.png"
+          alt="Praveen's Profile Image"
+          fill
+          className="object-cover object-top rounded-[40px] rotate-0
+            md:rotate-20 transition-all duration-200 ease-in-out hover:rotate-0
+            bg-yellow-400 [corner-shape:squircle] absolute"
+          sizes="84px"
+          priority
         />
       </div>
     </div>

@@ -59,13 +59,13 @@ export default function GithubHeatMap() {
     });
   }, []);
   return (
-    <div className="w-full py-3">
-      <motion.p
-        className="font-news title-github text-2xl md:text-3xl font-medium
-          text-primary px-3"
+    <motion.div className="w-full py-3 title-github opacity-0">
+      <p
+        className="font-news text-2xl md:text-3xl font-medium text-primary
+        px-3"
       >
         GitHub
-      </motion.p>
+      </p>
 
       <div
         className="text-xs title-github md:text-sm text-primary/80 font-normal
@@ -127,6 +127,6 @@ export default function GithubHeatMap() {
           )
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }

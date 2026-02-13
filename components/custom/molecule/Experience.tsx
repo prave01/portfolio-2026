@@ -33,13 +33,13 @@ export default function Experience() {
   }, []);
 
   return (
-    <div className="py-3">
-      <motion.p
-        className="font-news title-exp text-2xl md:text-3xl font-medium
-          text-primary px-3"
+    <div className="py-3 title-exp opacity-0">
+      <p
+        className="font-news text-2xl md:text-3xl font-medium text-primary
+        px-3"
       >
         Experience
-      </motion.p>
+      </p>
 
       <div className="pt-4 lg:pt-8 px-3 md:px-6 flex flex-col gap-5">
         <Accordion

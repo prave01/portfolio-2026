@@ -2,7 +2,7 @@
 
 import { animate, easeInOut, inView } from "motion";
 import { useEffect } from "react";
-import { motion, stagger } from "motion/react";
+import { stagger } from "motion/react";
 import OSSPill from "../atom/OSSPill";
 
 export default function OSSContributions() {
@@ -31,13 +31,13 @@ export default function OSSContributions() {
     });
   }, []);
   return (
-    <div className="py-3">
-      <motion.p
-        className="font-news title-oss text-2xl md:text-3xl font-medium
-          text-primary px-3"
+    <div className="py-3 title-oss opacity-0">
+      <p
+        className="font-news text-2xl md:text-3xl font-medium text-primary
+        px-3"
       >
         OSS Contributions
-      </motion.p>
+      </p>
 
       <div
         className="md:px-6 px-3 pt-4 md:pt-6 w-full flex-wrap flex-row flex
