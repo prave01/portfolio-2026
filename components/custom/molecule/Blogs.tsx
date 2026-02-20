@@ -5,6 +5,7 @@ import { easeInOut, motion, stagger } from "motion/react";
 import BlogCard from "../atom/BlogCard";
 import { useEffect } from "react";
 import { animate, inView } from "motion";
+import { LinkTransition } from "../atom/LinkTransition";
 
 export default function Blogs() {
   useEffect(() => {
@@ -40,11 +41,23 @@ export default function Blogs() {
       >
         Blogs
       </p>
+      <div className="absolute z-10 w-full h-full">
+        {" "}
+        <LinkTransition
+          href={"/blogs"}
+          className="absolute bottom-16 left-1/2 -translate-x-1/2 z-10
+            rounded-full bg-yellow-400 text-black shadow-lg hover:shadow-xl
+            transition-all px-3 py-2 text-sm font-medium hover:bg-primary"
+        >
+          View More
+        </LinkTransition>
+      </div>{" "}
       <div
-        className="w-full h-full lg:pt-8 grid grid-cols-2 place-items-center
-          gap-y-10 gap-x-5"
+        className="w-full h-80 lg:pt-8 grid grid-cols-1 md:grid-cols-2
+          place-items-center gap-y-8 gap-x-5 mask-b-from-5%
+          mask-b-to-transparent brightness-50 p-3"
       >
-        {Array.from({ length: 6 }).map((i, idx) => (
+        {Array.from({ length: 4 }).map((_, idx) => (
           <BlogCard
             key={idx}
             title="Evaluating RAG"
@@ -52,7 +65,7 @@ export default function Blogs() {
               "Traditional IR benchmarks fall short for real-world RAG applications due to stale data queries",
               "This talk introduces FreshStack, incomplete labels, and unrealistic",
             ]}
-            href="/"
+            href="/blogs"
           />
         ))}
 
