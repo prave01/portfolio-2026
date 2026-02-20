@@ -1,6 +1,6 @@
 "use client";
 
-import { animate } from "motion";
+import { animate, easeInOut } from "motion";
 import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/navigation";
 import { ReactNode } from "react";
@@ -24,29 +24,37 @@ export const LinkTransition = ({
 
     const overlay = document.createElement("div");
 
-    overlay.classList = "overlay fixed top-0 bg-yellow-400 z-10 h-full";
+    overlay.className = "fixed top-0 left-0 bg-yellow-400 z-50 h-full w-0";
 
     document.body.appendChild(overlay);
 
-    await animate(
-      ".overlay",
+    const enterAnimation = animate(
+      overlay,
       { width: "100%" },
       {
         duration: 0.3,
-        ease: "easeInOut",
-        delay: 0.5,
+        ease: easeInOut,
         type: "spring",
         damping: 20,
       },
     );
 
-    router.push(href);
+    if (document.body.contains(overlay)) router.push(href);
+
+    await enterAnimation;
 
     await animate(
-      ".overlay",
+      overlay,
       { scaleX: [1, 0], transformOrigin: "right" },
-      { duration: 0.2, ease: "easeInOut", type: "spring", damping: 20 },
+      {
+        duration: 0.3,
+        ease: easeInOut,
+        type: "spring",
+        damping: 20,
+      },
     );
+
+    document.body.removeChild(overlay);
   };
 
   return (

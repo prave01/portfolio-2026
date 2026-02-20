@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import TextEntry from "../atom/TextEntry";
 import SpotifyNotifer from "./SpotifyNotifier";
+import { easeInOut, motion } from "motion/react";
 
 export default function About() {
   const [isMounted, setMounted] = useState(false);

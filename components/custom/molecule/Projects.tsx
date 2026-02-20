@@ -2,7 +2,6 @@
 
 import { animate, easeInOut, inView } from "motion";
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect } from "react";
 import { stagger } from "motion/react";
 import { motion } from "motion/react";

@@ -6,7 +6,7 @@ import Image from "next/image";
 import z from "zod";
 import { cn } from "@/lib/utils";
 import { TimeSlider } from "../atom/TimeSlider";
-import { PauseIcon, X } from "lucide-react";
+import { PauseIcon } from "lucide-react";
 import { Spinner } from "@/components/ui/spinner";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
@@ -235,13 +235,6 @@ export default function SpotifyNotifer() {
               className="w-50 h-full relative rounded-[10px] flex items-center
                 justify-center"
             >
-              <div
-                onClick={() => setExpanded(false)}
-                className="top-2 rounded-full cursor-pointer right-2 absolute
-                  bg-green-500 w-fit p-1 border border-primary/80"
-              >
-                <X className="size-2" />
-              </div>{" "}
               {data && data?.item?.album?.images[0].url ? (
                 <>
                   <Image

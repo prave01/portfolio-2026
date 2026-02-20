@@ -8,6 +8,7 @@ import Header from "@/components/custom/molecule/Header";
 import OSSContributions from "@/components/custom/molecule/OSSContributions";
 import Projects from "@/components/custom/molecule/Projects";
 import { Separator } from "@/components/ui/separator";
+import { easeInOut, motion } from "motion/react";
 
 export default function Home() {
   return (
@@ -15,9 +16,18 @@ export default function Home() {
       className="w-full overflow-hidden min-h-screen relative font-semibold
         no-scrollbar"
     >
-      <div
-        className="gap-2 md:gap-4 pt-3 md:pt-18 mx-auto flex flex-col max-w-3xl
-          w-full no-scrollbar"
+      <motion.div
+        animate={{
+          opacity: [0, 1],
+          filter: ["blur(5px)", "blur(0px)"],
+        }}
+        transition={{
+          delay: 0.2,
+          duration: 0.3,
+          ease: easeInOut,
+        }}
+        className="gap-2 opacity-0 md:gap-4 pt-3 md:pt-18 mx-auto flex flex-col
+          max-w-3xl w-full no-scrollbar"
       >
         <Header />
         <Separator className="bg-primary/5" />
@@ -32,7 +42,7 @@ export default function Home() {
         <OSSContributions />
         <Separator className="bg-primary/5" />
         <Footer />
-      </div>
+      </motion.div>
     </div>
   );
 }

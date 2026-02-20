@@ -48,13 +48,14 @@ export default function ExperienceAccordian({
       </AccordionTrigger>
       <AccordionContent>
         <div
-          className="h-auto w-full flex flex-col gap-3 items-center
-            justify-start pl-15.5 py-4"
+          className="h-auto w-full flex flex-col gap-3 items-start justify-start
+            pl-15.5 py-4"
         >
+          <div className="w-30 h-10 bg-white/10 rounded-lg px-2 py-1"></div>
           {description.map((i, idx) => (
             <TextEntry
-              delay={idx - 0.5}
               className="text-primary/90 font-medium text-[14px]"
+              delay={idx - 0.5}
               key={idx}
             >
               {i}
