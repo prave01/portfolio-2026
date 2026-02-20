@@ -5,6 +5,7 @@ import {
 } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
 import TextEntry from "./TextEntry";
+import Image from "next/image";
 
 export default function ExperienceAccordian({
   name,
@@ -51,7 +52,48 @@ export default function ExperienceAccordian({
           className="h-auto w-full flex flex-col gap-3 items-start justify-start
             pl-15.5 py-4"
         >
-          <div className="w-30 h-10 bg-white/10 rounded-lg px-2 py-1"></div>
+          <div className="w-full flex flex-wrap items-start justify-start gap-2">
+            {" "}
+            <div
+              className="w-fit h-auto bg-white/5 rounded-lg px-3 py-2 flex gap-2
+                items-center justify-center text-primary font-medium text-xs"
+            >
+              <Image
+                width={500}
+                height={500}
+                className="size-4"
+                src={"/skills/ts.png"}
+                alt={""}
+              />
+              <p>TypeScript</p>
+            </div>
+            <div
+              className="w-fit h-auto bg-white/5 rounded-lg px-3 py-2 flex gap-2
+                items-center justify-center text-primary font-medium text-xs"
+            >
+              <Image
+                width={500}
+                height={500}
+                className="size-4"
+                src={"/skills/ts.png"}
+                alt={""}
+              />
+              <p>TypeScript</p>
+            </div>
+            <div
+              className="w-fit h-auto bg-white/5 rounded-lg px-3 py-2 flex gap-2
+                items-center justify-center text-primary font-medium text-xs"
+            >
+              <Image
+                width={500}
+                height={500}
+                className="size-4"
+                src={"/skills/ts.png"}
+                alt={""}
+              />
+              <p>TypeScript</p>
+            </div>
+          </div>
           {description.map((i, idx) => (
             <TextEntry
               className="text-primary/90 font-medium text-[14px]"

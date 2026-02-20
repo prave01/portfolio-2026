@@ -1,6 +1,7 @@
 "use client";
 
 import About from "@/components/custom/molecule/About";
+import Blogs from "@/components/custom/molecule/Blogs";
 import Experience from "@/components/custom/molecule/Experience";
 import Footer from "@/components/custom/molecule/Footer";
 import GithubHeatMap from "@/components/custom/molecule/GithubHeatMap";
@@ -40,6 +41,8 @@ export default function Home() {
         <Experience />
         <Separator className="bg-primary/5" />
         <OSSContributions />
+        <Separator className="bg-primary/5" />
+        <Blogs />
         <Separator className="bg-primary/5" />
         <Footer />
       </motion.div>
