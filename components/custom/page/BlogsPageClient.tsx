@@ -1,34 +1,54 @@
+"use client";
+
 import { ChevronLeft } from "lucide-react";
 import { LinkTransition } from "../atom/LinkTransition";
 import { Separator } from "@/components/ui/separator";
 import BlogCard from "../atom/BlogCard";
+import { motion } from "motion/react";
 
 export default function BlogPage() {
   return (
-    <div className="w-full min-h-screen pt-10 px-3">
-      <div className="max-w-2xl w-full mx-auto h-full flex gap-8 flex-col">
-        <LinkTransition
-          href={"/"}
-          className="text-primary/80 flex items-center hover:text-primary
-            transition-all ease-in-out group duration-150"
-        >
-          <ChevronLeft
-            className="size-4 group-hover:-translate-x-1 transition-all
-              duration-150 ease-in-out"
-          />
-          <p className="text-sm">Back</p>
-        </LinkTransition>
-        <div className="space-y-5 px-4">
+    <motion.div
+      animate={{
+        opacity: [0, 1],
+        filter: ["blur(5px)", "blur(0px)"],
+      }}
+      transition={{
+        delay: 0.2,
+        duration: 0.3,
+        ease: "easeInOut",
+      }}
+      className="w-full min-h-screen pt-10 px-3"
+    >
+      <div className="max-w-2xl w-full mx-auto h-full flex gap-6 flex-col">
+        <div className="flex flex-col gap-8">
           {" "}
-          <p className="font-news text-2xl md:text-3xl font-medium text-primary">
-            Blogs Page
-          </p>
-          <p className="text-primary/50 px-4 w-[90%] text-sm">
-            You can find some intersting blog posts about AI, Case Studies,
-            Architecural Planning, Enterprise Solutions and more ...
-          </p>
+          <LinkTransition
+            href={"/"}
+            className="text-primary/80 flex items-center hover:text-primary
+              transition-all ease-in-out group duration-150"
+          >
+            <ChevronLeft
+              className="size-4 group-hover:-translate-x-1 transition-all
+                duration-150 ease-in-out"
+            />
+            <p className="text-sm">Back</p>
+          </LinkTransition>
+          <div className="space-y-5 px-4">
+            {" "}
+            <p
+              className="font-news text-2xl md:text-3xl font-medium
+                text-primary"
+            >
+              Blogs Page
+            </p>
+            <p className="text-primary/50 px-4 w-[90%] text-sm">
+              You can find some intersting blog posts about AI, Case Studies,
+              Architecural Planning, Enterprise Solutions and more ...
+            </p>
+          </div>
         </div>
-        <Separator className="w-[60%] mx-auto bg-primary/5" />
+        <Separator className="w-[60%] m-0 mx-auto bg-primary/5" />
         <div
           className="w-full h-full pb-10 grid grid-cols-1 lg:grid-cols-2
             place-items-center px-3 gap-4"
@@ -46,6 +66,6 @@ export default function BlogPage() {
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

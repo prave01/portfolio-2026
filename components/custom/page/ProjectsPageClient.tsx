@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { LinkTransition } from "../atom/LinkTransition";
 import { Separator } from "@/components/ui/separator";
 import ProjectCard from "../molecule/ProjectCard";
+import { motion } from "motion/react";
 
 export default function ProjectsPageClient() {
   useEffect(() => {
@@ -16,7 +17,18 @@ export default function ProjectsPageClient() {
     );
   }, []);
   return (
-    <div className="w-full min-h-screen pt-10 px-3">
+    <motion.div
+      animate={{
+        opacity: [0, 1],
+        filter: ["blur(5px)", "blur(0px)"],
+      }}
+      transition={{
+        delay: 0.2,
+        duration: 0.3,
+        ease: "easeInOut",
+      }}
+      className="w-full min-h-screen pt-10 px-3"
+    >
       <div className="max-w-2xl w-full mx-auto h-full flex gap-6 flex-col">
         <LinkTransition
           href={"/"}
@@ -54,6 +66,6 @@ export default function ProjectsPageClient() {
           <ProjectCard />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

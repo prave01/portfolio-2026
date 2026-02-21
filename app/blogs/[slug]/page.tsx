@@ -37,14 +37,15 @@ export default async function Page({
           />
           <p className="text-sm">Back</p>
         </LinkTransition>
-        <p
-          className="font-news text-2xl md:text-3xl font-medium text-primary
-            px-4"
-        >
-          {slug.split("_").join(" ")}
-        </p>
+        <div className="px-4 space-2">
+          {" "}
+          <p className="font-news text-2xl md:text-3xl font-medium text-primary">
+            {slug.split("_").join(" ")}
+          </p>
+          <p className="text-primary/50 text-sm">Mar 2025</p>
+        </div>
         <Separator className="w-[60%] mx-auto bg-primary/5" />
-        <div className="prose prose-invert px-4">
+        <div className="prose prose-invert px-4 pb-5">
           <Markdown>{markdown}</Markdown>
         </div>
       </div>
