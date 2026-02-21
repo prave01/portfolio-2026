@@ -25,6 +25,7 @@ export default function Blogs() {
         ".blog-card",
         { opacity: [0, 1], y: [5, 0], filter: ["blur(5px)", "blur(0px)"] },
         {
+          delay: 0.2,
           duration: 0.3,
           ease: easeInOut,
         },
