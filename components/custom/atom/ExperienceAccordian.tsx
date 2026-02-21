@@ -1,3 +1,5 @@
+"use client";
+
 import {
   AccordionContent,
   AccordionItem,
@@ -6,6 +8,7 @@ import {
 import { cn } from "@/lib/utils";
 import TextEntry from "./TextEntry";
 import Image from "next/image";
+import { Fragment } from "react";
 
 export default function ExperienceAccordian({
   name,
@@ -14,10 +17,12 @@ export default function ExperienceAccordian({
   description,
   bgcolor,
   index,
+  techImages,
 }: {
   index: number;
   name: string;
   role: string;
+  techImages: Array<{ name: string; image: string }>;
   period: string;
   description: string[];
   bgcolor: string;
@@ -54,45 +59,23 @@ export default function ExperienceAccordian({
         >
           <div className="w-full flex flex-wrap items-start justify-start gap-2">
             {" "}
-            <div
-              className="w-fit h-auto bg-white/5 rounded-lg px-3 py-2 flex gap-2
-                items-center justify-center text-primary font-medium text-xs"
-            >
-              <Image
-                width={500}
-                height={500}
-                className="size-4"
-                src={"/skills/ts.png"}
-                alt={""}
-              />
-              <p>TypeScript</p>
-            </div>
-            <div
-              className="w-fit h-auto bg-white/5 rounded-lg px-3 py-2 flex gap-2
-                items-center justify-center text-primary font-medium text-xs"
-            >
-              <Image
-                width={500}
-                height={500}
-                className="size-4"
-                src={"/skills/ts.png"}
-                alt={""}
-              />
-              <p>TypeScript</p>
-            </div>
-            <div
-              className="w-fit h-auto bg-white/5 rounded-lg px-3 py-2 flex gap-2
-                items-center justify-center text-primary font-medium text-xs"
-            >
-              <Image
-                width={500}
-                height={500}
-                className="size-4"
-                src={"/skills/ts.png"}
-                alt={""}
-              />
-              <p>TypeScript</p>
-            </div>
+            {techImages.map((i, idx) => (
+              <div
+                key={idx}
+                className="w-fit h-auto bg-white/5 rounded-lg px-3 py-2 flex
+                  gap-2 items-center justify-center text-primary font-medium
+                  text-xs"
+              >
+                <Image
+                  width={500}
+                  height={500}
+                  className="size-4"
+                  src={i.image}
+                  alt={""}
+                />
+                <p>{i.name}</p>
+              </div>
+            ))}
           </div>
           {description.map((i, idx) => (
             <TextEntry

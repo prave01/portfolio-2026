@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useEffect } from "react";
 import { motion } from "motion/react";
 import { LinkTransition } from "../atom/LinkTransition";
+import { ProjectsData } from "@/lib/constants/Project";
 
 export default function Projects() {
   useEffect(() => {
@@ -43,11 +44,11 @@ export default function Projects() {
           items-center justify-center w-fit mx-auto mask-b-from-5%
           mask-b-to-transparent brightness-50"
       >
-        {Array.from({ length: 6 }).map((_, i) => (
+        {ProjectsData.slice(0, 3).map((i, idx) => (
           <Image
-            key={i}
-            id={`sample-image-${i}`}
-            src={"/aa.jpeg"}
+            key={idx}
+            id={`sample-image-${idx}`}
+            src={i.image as string}
             alt={""}
             width={500}
             height={500}

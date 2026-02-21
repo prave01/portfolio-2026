@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { motion, stagger } from "motion/react";
 import { Accordion } from "@/components/ui/accordion";
 import ExperienceAccordian from "../atom/ExperienceAccordian";
+import { ExperienceData } from "@/lib/constants/Experience";
 
 export default function Experience() {
   useEffect(() => {
@@ -47,18 +48,16 @@ export default function Experience() {
           defaultValue={["item-1"]}
           className="divide-none gap-6 flex flex-col"
         >
-          {Array.from({ length: 2 }).map((_, i) => (
+          {ExperienceData.map((i, idx) => (
             <ExperienceAccordian
-              key={i}
-              index={i}
-              name={"Weframer-Tech"}
-              role={"Frontend Engineer"}
-              period={"2024 - 2025"}
-              description={[
-                "Worked on a JAMstack-based web application called 'Neuzorg' for the Government of Karnataka a public news platform similar to Daily Hunt or Google News.",
-                "Leveraging Next.js for the frontend, TanStack Query for optimized data fetching, and Directus as the headless CMS.",
-              ]}
-              bgcolor={"bg-rose-400"}
+              key={idx}
+              index={idx}
+              name={i.name}
+              role={i.role}
+              period={i.duration}
+              techImages={i.techImages}
+              description={i.description}
+              bgcolor={i.color}
             />
           ))}{" "}
         </Accordion>

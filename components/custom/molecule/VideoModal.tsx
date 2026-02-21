@@ -4,9 +4,11 @@ import { Dispatch, SetStateAction, useEffect, useRef } from "react";
 export default function VideoModal({
   open = true,
   setOpen,
+  source,
 }: {
   open: boolean;
   setOpen: Dispatch<SetStateAction<boolean>>;
+  source: string;
 }) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
@@ -48,14 +50,14 @@ export default function VideoModal({
     >
       <div
         onClick={() => setOpen(false)}
-        className="absolute backdrop-blur-md bg-black/50 w-full h-full -z-10"
+        className="absolute backdrop-blur-md bg-black/80 w-full h-full -z-10"
       />
 
       <video
         ref={videoRef}
-        src="/sample-vid.mp4"
+        src={source}
         controls
-        className="size-auto rounded-2xl"
+        className="w-380 h-180 rounded-2xl"
       />
     </div>
   );

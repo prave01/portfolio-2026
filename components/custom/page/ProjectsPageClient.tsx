@@ -7,6 +7,7 @@ import { LinkTransition } from "../atom/LinkTransition";
 import { Separator } from "@/components/ui/separator";
 import ProjectCard from "../molecule/ProjectCard";
 import { motion, stagger } from "motion/react";
+import { ProjectsData } from "@/lib/constants/Project";
 
 export default function ProjectsPageClient() {
   useEffect(() => {
@@ -52,14 +53,18 @@ export default function ProjectsPageClient() {
           className="w-full h-full lg:pb-5 pb-10 grid grid-cols-1 lg:grid-cols-2
             place-items-center px-3 gap-4"
         >
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
+          {ProjectsData.map((i, idx) => (
+            <ProjectCard
+              key={idx}
+              name={i.name}
+              techImages={i.techImages}
+              image={i.image}
+              github={i.github}
+              description={i.description}
+              video={i.video}
+              live={i.live}
+            />
+          ))}
         </div>
       </div>
     </motion.div>
