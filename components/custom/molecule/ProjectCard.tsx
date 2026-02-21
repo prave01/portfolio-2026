@@ -1,13 +1,13 @@
 import Image from "next/image";
+import { Github, Globe, PlayCircleIcon } from "lucide-react";
+import Link from "next/link";
+import VideoModal from "./VideoModal";
+import { useState } from "react";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { Github, Globe, PlayCircleIcon } from "lucide-react";
-import Link from "next/link";
-import VideoModal from "./VideoModal";
-import { useState } from "react";
 
 export default function ProjectCard() {
   const [open, setOpen] = useState(false);
@@ -18,7 +18,7 @@ export default function ProjectCard() {
       <VideoModal setOpen={setOpen} open={open} />
       <div
         className="w-full h-auto bg-black/10 rounded-2xl [corner-shape:squircle]
-          project-card border-primary/10 border overflow-hidden"
+          project-card border-primary/10 border overflow-hidden opacity-0"
       >
         <div className="w-full h-full relative">
           {" "}
@@ -30,46 +30,52 @@ export default function ProjectCard() {
             alt={""}
           />
           <div onClick={() => { }} className="absolute top-2 right-2">
-            {" "}
-            <Tooltip>
-              {" "}
-              <TooltipContent>Play Video</TooltipContent>
-              <TooltipTrigger asChild>
-                <PlayCircleIcon
-                  onClick={() => setOpen(true)}
-                  className="stroke-primary size-6 cursor-pointer
-                    hover:stroke-primary/80"
-                />
-              </TooltipTrigger>
-            </Tooltip>
+            <PlayCircleIcon
+              onClick={() => setOpen(true)}
+              className="stroke-primary size-6 cursor-pointer
+                hover:stroke-primary/80"
+            />
           </div>
         </div>
         <div className="px-3 py-2 flex flex-col gap-1">
-          {" "}
           <p className="text-lg font-medium text-primary">Project Name</p>
           <div className="flex gap-x-2 items-center w-full justify-start">
-            {" "}
-            <Image
-              width={500}
-              height={500}
-              className="size-4.5"
-              src={"/skills/ts.png"}
-              alt={""}
-            />
-            <Image
-              width={500}
-              height={500}
-              className="size-4.5"
-              src={"/skills/ts.png"}
-              alt={""}
-            />
-            <Image
-              width={500}
-              height={500}
-              className="size-4.5"
-              src={"/skills/ts.png"}
-              alt={""}
-            />
+            <Tooltip>
+              <TooltipContent>TypeScript</TooltipContent>
+              <TooltipTrigger asChild>
+                <Image
+                  width={500}
+                  height={500}
+                  className="size-4.5"
+                  src={"/skills/ts.png"}
+                  alt={""}
+                />
+              </TooltipTrigger>
+            </Tooltip>
+            <Tooltip>
+              <TooltipContent>TypeScript</TooltipContent>
+              <TooltipTrigger asChild>
+                <Image
+                  width={500}
+                  height={500}
+                  className="size-4.5"
+                  src={"/skills/ts.png"}
+                  alt={""}
+                />
+              </TooltipTrigger>
+            </Tooltip>
+            <Tooltip>
+              <TooltipContent>TypeScript</TooltipContent>
+              <TooltipTrigger asChild>
+                <Image
+                  width={500}
+                  height={500}
+                  className="size-4.5"
+                  src={"/skills/ts.png"}
+                  alt={""}
+                />
+              </TooltipTrigger>
+            </Tooltip>
           </div>
           <p className="text-sm text-primary/50 font-normal my-1">
             Lorem ipsum is typically a corrupted version of De finibus bonorum

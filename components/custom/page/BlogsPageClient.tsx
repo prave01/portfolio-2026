@@ -1,12 +1,13 @@
 import { ChevronLeft } from "lucide-react";
 import { LinkTransition } from "../atom/LinkTransition";
 import { Separator } from "@/components/ui/separator";
+import BlogCard from "../atom/BlogCard";
 
 export default function BlogPage() {
   return (
     <div>
       {" "}
-      <div className="w-full min-h-screen pt-10 md:pt-15 px-3">
+      <div className="w-full min-h-screen pt-10 px-3">
         <div className="max-w-2xl w-full mx-auto h-full flex gap-8 flex-col">
           <LinkTransition
             href={"/"}
@@ -34,9 +35,21 @@ export default function BlogPage() {
           </div>
           <Separator className="w-[60%] mx-auto bg-primary/5" />
           <div
-            className="grid grid-cols-1 gap-y-12 items-start pb-15 pt-5 md:py-10
-              justify-center md:grid-cols-2 w-full h-f overflow-hidden"
-          ></div>
+            className="w-full h-full pb-10 grid grid-cols-1 lg:grid-cols-2
+              place-items-center px-3 gap-4"
+          >
+            {Array.from({ length: 4 }).map((_, idx) => (
+              <BlogCard
+                key={idx}
+                title="Evaluating RAG"
+                description={[
+                  "Traditional IR benchmarks fall short for real-world RAG applications due to stale data queries",
+                  "This talk introduces FreshStack, incomplete labels, and unrealistic",
+                ]}
+                href="/blogs"
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>
