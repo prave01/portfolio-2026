@@ -1,34 +1,30 @@
 "use client";
 
-import { ChevronLeft, Github, Globe, PlayCircleIcon } from "lucide-react";
-import { animate, easeInOut, stagger } from "motion";
+import { ChevronLeft } from "lucide-react";
+import { animate, easeInOut } from "motion";
 import { useEffect } from "react";
 import { LinkTransition } from "../atom/LinkTransition";
 import { Separator } from "@/components/ui/separator";
 import ProjectCard from "../molecule/ProjectCard";
-import { motion } from "motion/react";
+import { motion, stagger } from "motion/react";
 
 export default function ProjectsPageClient() {
   useEffect(() => {
-    animate(
-      ".project-card",
-      { opacity: [0, 1], y: [10, 0], filter: ["blur(5px)", "blur(0px)"] },
-      { duration: 0.3, ease: easeInOut, delay: stagger(0.1) },
-    );
+    (async () => {
+      await animate(
+        ".project-page",
+        { opacity: [0, 1], filter: ["blur(5px)", "blur(0px)"] },
+        { delay: 1, duration: 0.3, ease: "easeInOut" },
+      );
+      await animate(
+        ".project-card",
+        { opacity: [0, 1], y: [10, 0], filter: ["blur(5px)", "blur(0px)"] },
+        { delay: stagger(0.1), duration: 0.3, ease: easeInOut },
+      );
+    })();
   }, []);
   return (
-    <motion.div
-      animate={{
-        opacity: [0, 1],
-        filter: ["blur(5px)", "blur(0px)"],
-      }}
-      transition={{
-        delay: 0.2,
-        duration: 0.3,
-        ease: "easeInOut",
-      }}
-      className="w-full min-h-screen pt-10 px-3"
-    >
+    <motion.div className="w-full min-h-screen pt-10 px-3 opacity-0 project-page">
       <div className="max-w-2xl w-full mx-auto h-full flex gap-6 flex-col">
         <LinkTransition
           href={"/"}

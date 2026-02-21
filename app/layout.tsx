@@ -35,7 +35,8 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.className} ${playwrite.variable} antialiased
-          bg-[#131010] no-scrollbar`}
+          bg-[#131010] no-scrollbar selection:bg-yellow-400
+          selection:text-[#131010]`}
       >
         <TooltipProvider> {children}</TooltipProvider>
       </body>

@@ -1,7 +1,6 @@
 "use client";
 
 import { ExternalLinkIcon } from "lucide-react";
-import { motion } from "motion/react";
 import { LinkTransition } from "./LinkTransition";
 
 export default function BlogCard({
@@ -14,20 +13,12 @@ export default function BlogCard({
   href: string;
 }) {
   return (
-    <LinkTransition href={href}>
-      <motion.div
-        animate={{
-          y: [1, 0],
-          opacity: [0, 1],
-        }}
-        transition={{
-          duration: 0.3,
-          ease: "easeInOut",
-        }}
+    <LinkTransition href={href} className="blog-card opacity-0">
+      <div
         className="blog-card bg-black/5 h-full max-h-45 w-full max-w-85
           rounded-4xl border-primary/10 border p-5 flex flex-col gap-2
-          hover:border-yell-400 transition-all duration-300 ease-in-out relative
-          overflow-clip group hover:cursor-pointer"
+          transition-all duration-300 ease-in-out relative overflow-clip group
+          hover:cursor-pointer"
       >
         <div
           className="w-auto h-auto group-hover:brightness-50 transition-all
@@ -51,7 +42,7 @@ export default function BlogCard({
         >
           <ExternalLinkIcon className="size-8 stroke-primary" />
         </div>
-      </motion.div>
+      </div>
     </LinkTransition>
   );
 }

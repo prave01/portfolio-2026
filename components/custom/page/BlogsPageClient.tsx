@@ -4,22 +4,28 @@ import { ChevronLeft } from "lucide-react";
 import { LinkTransition } from "../atom/LinkTransition";
 import { Separator } from "@/components/ui/separator";
 import BlogCard from "../atom/BlogCard";
-import { motion } from "motion/react";
+import { stagger } from "motion/react";
+import { animate, easeInOut } from "motion";
+import { useEffect } from "react";
 
 export default function BlogPage() {
+  useEffect(() => {
+    (async () => {
+      await animate(
+        ".blog-page",
+        { opacity: [0, 1], filter: ["blur(5px)", "blur(0px)"] },
+        { delay: 1, duration: 0.3, ease: "easeInOut" },
+      );
+      await animate(
+        ".blog-card",
+        { opacity: [0, 1], y: [10, 0], filter: ["blur(5px)", "blur(0px)"] },
+        { delay: stagger(0.1), duration: 0.3, ease: easeInOut },
+      );
+    })();
+  }, []);
+
   return (
-    <motion.div
-      animate={{
-        opacity: [0, 1],
-        filter: ["blur(5px)", "blur(0px)"],
-      }}
-      transition={{
-        delay: 0.2,
-        duration: 0.3,
-        ease: "easeInOut",
-      }}
-      className="w-full min-h-screen pt-10 px-3"
-    >
+    <div className="w-full min-h-screen pt-10 px-3 opacity-0 blog-page">
       <div className="max-w-2xl w-full mx-auto h-full flex gap-6 flex-col">
         <div className="flex flex-col gap-8">
           {" "}
@@ -66,6 +72,6 @@ export default function BlogPage() {
           ))}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }

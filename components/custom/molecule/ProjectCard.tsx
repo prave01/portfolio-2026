@@ -13,12 +13,12 @@ export default function ProjectCard() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full project-card opacity-0">
       {" "}
       <VideoModal setOpen={setOpen} open={open} />
       <div
         className="w-full h-auto bg-black/10 rounded-2xl [corner-shape:squircle]
-          project-card border-primary/10 border overflow-hidden opacity-0"
+          border-primary/10 border overflow-hidden"
       >
         <div className="w-full h-full relative">
           {" "}
