@@ -20,17 +20,17 @@ export default function Projects() {
       );
     });
 
-    inView(".title-projects", () => {
-      animate(
-        ".sample-image",
-        { opacity: [0, 1], y: [5, 0], filter: ["blur(5px)", "blur(0px)"] },
-        {
-          delay: stagger(0.1),
-          duration: 0.9,
-          ease: easeInOut,
-        },
-      );
-    });
+    // inView(".sample-image", (element) => {
+    //   animate(
+    //     element,
+    //     { opacity: [0, 1], y: [5, 0], filter: ["blur(5px)", "blur(0px)"] },
+    //     {
+    //       delay: stagger(0.1),
+    //       duration: 0.9,
+    //       ease: easeInOut,
+    //     },
+    //   );
+    // });
   }, []);
   return (
     <motion.div className="relative w-full py-3 title-projects opacity-0">

@@ -1,12 +1,18 @@
 "use client";
 
-import { ChevronLeft } from "lucide-react";
-import Link from "next/link";
-import ProjectCard from "../atom/ProjectCard";
+import { ChevronLeft, Github, Globe, PlayCircleIcon } from "lucide-react";
 import { animate, easeInOut, stagger } from "motion";
 import { useEffect } from "react";
 import { LinkTransition } from "../atom/LinkTransition";
 import { Separator } from "@/components/ui/separator";
+import Image from "next/image";
+import Link from "next/link";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import ProjectCard from "../molecule/ProjectCard";
 
 export default function ProjectsPageClient() {
   useEffect(() => {
@@ -17,8 +23,7 @@ export default function ProjectsPageClient() {
     );
   }, []);
   return (
-    <div>
-      {" "}
+    <div className="">
       <div className="w-full min-h-screen pt-10 md:pt-15 px-3">
         <div className="max-w-2xl w-full mx-auto h-full flex gap-8 flex-col">
           <LinkTransition
@@ -41,36 +46,17 @@ export default function ProjectsPageClient() {
               Projects Page
             </p>
             <p className="text-primary/50 px-4 w-[90%] text-sm">
-              All these projects are propely planned and implemented by me, You
-              can find all the necessary structures and tech stack here.
+              All these projects are propely planned, developed and maintained
+              by me, You can find all the necessary structures and tech stack
+              here.
             </p>
           </div>
           <Separator className="w-[60%] mx-auto bg-primary/5" />
           <div
-            className="grid grid-cols-1 gap-y-12 items-start pb-15
-              justify-center md:grid-cols-2 w-full h-f overflow-hidden"
+            className="w-full h-auto pb-5 grid grid-cols-2 place-items-center g
+              px-3 gap-4"
           >
-            {" "}
-            <ProjectCard
-              name={"Code Planning and Orhestration like (n8n)"}
-              github={"https://github.com/prave01/n8n_forCodePlanning"}
-              live={"https://tried-n8n.vercel.app/"}
-            />
-            <ProjectCard
-              name={"Code Planning and Orhestration like (n8n)"}
-              github={"https://github.com/prave01/n8n_forCodePlanning"}
-              live={"https://tried-n8n.vercel.app/"}
-            />
-            <ProjectCard
-              name={"Code Planning and Orhestration like (n8n)"}
-              github={"https://github.com/prave01/n8n_forCodePlanning"}
-              live={"https://tried-n8n.vercel.app/"}
-            />
-            <ProjectCard
-              name={"Code Planning and Orhestration like (n8n)"}
-              github={"https://github.com/prave01/n8n_forCodePlanning"}
-              live={"https://tried-n8n.vercel.app/"}
-            />
+            <ProjectCard />
           </div>
         </div>
       </div>

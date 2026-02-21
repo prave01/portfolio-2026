@@ -7,6 +7,7 @@ import {
   Tangerine,
 } from "next/font/google";
 import "./globals.css";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,7 +37,7 @@ export default function RootLayout({
         className={`${geistSans.className} ${playwrite.variable} antialiased
           bg-[#131010] no-scrollbar`}
       >
-        {children}
+        <TooltipProvider> {children}</TooltipProvider>
       </body>
     </html>
   );
