@@ -3,7 +3,6 @@
 import { animate, easeInOut, inView } from "motion";
 import Image from "next/image";
 import { useEffect } from "react";
-import { stagger } from "motion/react";
 import { motion } from "motion/react";
 import { LinkTransition } from "../atom/LinkTransition";
 
@@ -19,18 +18,6 @@ export default function Projects() {
         },
       );
     });
-
-    // inView(".sample-image", (element) => {
-    //   animate(
-    //     element,
-    //     { opacity: [0, 1], y: [5, 0], filter: ["blur(5px)", "blur(0px)"] },
-    //     {
-    //       delay: stagger(0.1),
-    //       duration: 0.9,
-    //       ease: easeInOut,
-    //     },
-    //   );
-    // });
   }, []);
   return (
     <motion.div className="relative w-full py-3 title-projects opacity-0">
