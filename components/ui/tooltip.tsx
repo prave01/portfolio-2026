@@ -46,7 +46,7 @@ function TooltipContent({
         data-slot="tooltip-content"
         sideOffset={sideOffset}
         className={cn(
-          `bg-primary text-black animate-in fade-in-0 zoom-in-95
+          `bg-yellow-400 text-black animate-in fade-in-0 zoom-in-95
           data-[state=closed]:animate-out data-[state=closed]:fade-out-0
           data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2
           data-[side=left]:slide-in-from-right-2
@@ -60,7 +60,7 @@ function TooltipContent({
       >
         {children}
         <TooltipPrimitive.Arrow
-          className="bg-primary fill-primary z-50 size-2.5
+          className="bg-yellow-400 fill-yellow-400 z-50 size-2.5
             translate-y-[calc(-50%_-_2px)] rotate-45 rounded-[2px]"
         />
       </TooltipPrimitive.Content>

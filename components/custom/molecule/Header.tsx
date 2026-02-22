@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 
 export default function Header() {
-  const roles = ["Software Engineer", "Design Engineer"];
+  const roles = ["FullStack Developer", "Design Engineer", "AI Engineer"];
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
