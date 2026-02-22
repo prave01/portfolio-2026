@@ -4,6 +4,7 @@ import { animate, easeInOut, inView } from "motion";
 import { useEffect } from "react";
 import { stagger } from "motion/react";
 import OSSPill from "../atom/OSSPill";
+import { ContributionsData } from "@/lib/constants/Contributions";
 
 export default function OSSContributions() {
   useEffect(() => {
@@ -43,12 +44,15 @@ export default function OSSContributions() {
         className="md:px-6 px-3 pt-4 md:pt-6 w-full flex-wrap flex-row flex
           gap-2 justify-start"
       >
-        <OSSPill
-          name={"Formbricks"}
-          issue={"6784"}
-          href={"https://github.com/formbricks/formbricks/pull/6784"}
-          icon={"/formbricks.png"}
-        />
+        {ContributionsData.map((i, idx) => (
+          <OSSPill
+            key={idx}
+            name={i.name}
+            issue={i.issue}
+            href={i.link}
+            icon={i.logo}
+          />
+        ))}
       </div>
     </div>
   );

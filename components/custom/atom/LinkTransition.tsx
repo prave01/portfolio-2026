@@ -32,7 +32,7 @@ export const LinkTransition = ({
       overlay,
       { width: "100%" },
       {
-        duration: 0.3,
+        duration: 0.4,
         ease: easeInOut,
         type: "spring",
         damping: 20,

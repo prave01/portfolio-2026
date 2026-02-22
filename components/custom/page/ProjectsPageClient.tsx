@@ -58,10 +58,10 @@ export default function ProjectsPageClient() {
               key={idx}
               name={i.name}
               techImages={i.techImages}
-              image={i.image}
+              image={i.image as string}
               github={i.github}
               description={i.description}
-              video={i.video}
+              video={i.video as string}
               live={i.live}
             />
           ))}
