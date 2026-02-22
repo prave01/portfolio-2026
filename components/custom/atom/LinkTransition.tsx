@@ -43,16 +43,18 @@ export const LinkTransition = ({
 
     await enterAnimation;
 
-    await animate(
-      overlay,
-      { scaleX: [1, 0], transformOrigin: "right" },
-      {
-        duration: 0.3,
-        ease: easeInOut,
-        type: "spring",
-        damping: 20,
-      },
-    );
+    if (window.location.href.includes(href)) {
+      await animate(
+        overlay,
+        { scaleX: [1, 0], transformOrigin: "right" },
+        {
+          duration: 0.3,
+          ease: easeInOut,
+          type: "spring",
+          damping: 20,
+        },
+      );
+    }
 
     document.body.removeChild(overlay);
   };
