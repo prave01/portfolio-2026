@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   images: {
-    remotePatterns: ["i.scdn.co", "avatars.githubusercontent.com"],
+    domains: ["i.scdn.co", "avatars.githubusercontent.com"],
   },
 };
 
