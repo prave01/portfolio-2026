@@ -30,7 +30,7 @@ export default function Footer() {
       className="h-auto footer opacity-0 w-full pb-6 md:pb-4 px-2 flex relative"
     >
       <div
-        className="w-full h-auto bg-neutral-800 rounded-4xl
+        className="w-full h-auto bg-neutral-800/50 rounded-4xl
           [corner-shape:squircle] px-4 py-4"
       >
         {" "}
