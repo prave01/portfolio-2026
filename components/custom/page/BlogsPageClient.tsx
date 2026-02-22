@@ -56,7 +56,7 @@ export default function BlogPage() {
         </div>
         <Separator className="w-[60%] m-0 mx-auto bg-primary/5" />
         <div
-          className="w-full h-full pb-10 grid grid-cols-1 lg:grid-cols-2
+          className="w-full h-full pb-10 grid grid-cols-1 sm:grid-cols-2
             place-items-center px-3 gap-4"
         >
           {Array.from({ length: 4 }).map((_, idx) => (

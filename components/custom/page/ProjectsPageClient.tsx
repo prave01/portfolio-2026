@@ -50,7 +50,7 @@ export default function ProjectsPageClient() {
         </div>
         <Separator className="w-[60%] mx-auto bg-primary/5" />
         <div
-          className="w-full h-full lg:pb-5 pb-10 grid grid-cols-1 lg:grid-cols-2
+          className="w-full h-full lg:pb-5 pb-10 grid grid-cols-1 sm:grid-cols-2
             place-items-center px-3 gap-4"
         >
           {ProjectsData.map((i, idx) => (
