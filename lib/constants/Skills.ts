@@ -64,8 +64,8 @@ export const SkillsData: Array<{
       logo: "/skills/drizzle.png",
     },
     {
-      name: "Lua",
-      logo: "/skills/lua.png",
+      name: "Prisma",
+      logo: "/skills/prisma.png",
     },
     {
       name: "AWS",

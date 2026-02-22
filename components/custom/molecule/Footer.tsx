@@ -5,6 +5,11 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { easeInOut, useInView } from "motion/react";
 import { animate } from "motion";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 export default function Footer() {
   const ref = useRef(null);

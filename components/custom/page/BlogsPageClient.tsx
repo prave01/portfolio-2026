@@ -7,6 +7,7 @@ import BlogCard from "../atom/BlogCard";
 import { stagger } from "motion/react";
 import { animate, easeInOut } from "motion";
 import { useEffect } from "react";
+import { BlogsData } from "@/lib/constants/Blogs";
 
 export default function BlogPage() {
   useEffect(() => {
@@ -59,10 +60,10 @@ export default function BlogPage() {
           className="w-full h-full pb-10 grid grid-cols-1 sm:grid-cols-2
             place-items-center px-3 gap-4"
         >
-          {Array.from({ length: 4 }).map((_, idx) => (
+          {BlogsData.map((i, idx) => (
             <BlogCard
               key={idx}
-              title="Evaluating RAG"
+              title={i.title}
               description={[
                 "Traditional IR benchmarks fall short for real-world RAG applications due to stale data queries",
                 "This talk introduces FreshStack, incomplete labels, and unrealistic",

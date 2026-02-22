@@ -5,6 +5,7 @@ import { LinkTransition } from "@/components/custom/atom/LinkTransition";
 import Markdown from "react-markdown";
 import { Separator } from "@/components/ui/separator";
 import { ChevronLeft } from "lucide-react";
+import matter from "gray-matter";
 
 export default async function Page({
   params,
@@ -22,6 +23,8 @@ export default async function Page({
   }
 
   const markdown = fs.readFileSync(filePath, "utf-8");
+
+  const { content, data } = matter(markdown);
 
   return (
     <div
@@ -43,13 +46,22 @@ export default async function Page({
         <div className="px-4 space-2">
           {" "}
           <p className="font-news text-2xl md:text-3xl font-medium text-primary">
-            {slug.split("_").join(" ")}
+            {data.title ? data.title : slug.split("_").join(" ")}
           </p>
-          <p className="text-primary/50 text-sm">Mar 2025</p>
+          <div className="text-primary/50 text-sm pt-1 flex gap-1">
+            <p className="text-primary/80">{data.author} -</p>
+            {data.date
+              ? new Date(data.date).toLocaleDateString("en-IN", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })
+              : ""}
+          </div>
         </div>
         <Separator className="w-[60%] mx-auto bg-primary/5" />
         <div className="prose prose-invert px-4 pb-5">
-          <Markdown>{markdown}</Markdown>
+          <Markdown>{content}</Markdown>
         </div>
       </div>
     </div>
