@@ -24,7 +24,10 @@ export default async function Page({
   const markdown = fs.readFileSync(filePath, "utf-8");
 
   return (
-    <div className="w-full min-h-screen pt-10 px-3">
+    <div
+      className="w-full min-h-screen pt-10 px-3 delay-100 transition-all
+        opacity-100 duration-150"
+    >
       <div className="max-w-2xl w-full mx-auto h-full flex gap-6 flex-col">
         <LinkTransition
           href={"/blogs"}

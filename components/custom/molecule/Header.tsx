@@ -63,8 +63,8 @@ export default function Header() {
         </p>
       </div>
       <div
-        className="relative size-21 md:border-dashed border-2
-          border-yellow-400/30 rounded-4xl"
+        className="relative size-21 md:border-dashed md:border-2
+          md:border-yellow-400/30 rounded-4xl"
       >
         <Image
           src="/new3.png"
